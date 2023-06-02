@@ -9,24 +9,24 @@
 ### 使い方メモ
 
 #### 読み込み
-```cs
+```csharp
 var imageGray = IOUtil.LoadImageGray("画像のファイルパス");
 var imageRGB = IOUtil.LoadImageRGB("画像のファイルパス");
 ```
 
 #### 書き込み
-```cs
+```csharp
 image.SaveAsImage().Save("保存先のファイルパス");
 ```
 
 ### モードの変換
-```cs
+```csharp
 var imageGray = imageRGB.ToGrayScale();
 var imageHSV = imageRGB.ToHSV();
 ```
 
 ### 回転
-```cs
+```csharp
 // 時計回り90°回転
 var rotateImage1 = image.Rotate(ImageRotate.TurnRight);
 // 30°回転
@@ -36,7 +36,7 @@ var rotateImage3 = image.Rotate(ImageRotate.ReverseHorizontal);
 ```
 
 ### 拡大縮小
-```cs
+```csharp
 // ニアレストネイバー
 var scaleImage1 = image.Scale(100, 200, ImageScale.NearestNeighbor);
 // バイキュービック
@@ -44,7 +44,7 @@ var scaleImage2 = image.Scale(100, 200, ImageScale.Bicubic);
 ```
 
 ### 色調補正
-```cs
+```csharp
 // 色相の補正
 var ajustImage1 = image.Ajdust(ImageAjdustment.Hue, 0.5f);
 // 明度の補正
@@ -54,7 +54,7 @@ var ajustImage3 = image.Ajdust(ImageAjdustment.Inverse);
 ```
 
 ### 描画モード
-```cs
+```csharp
 // 乗算
 var blendImage1 = image1.Blend(image2, ImageBlend.Multiply);
 // オーバーレイ
@@ -63,7 +63,7 @@ var blendImage2 = image1.Blend(image3, ImageBlend.Overlay);
 ※画像サイズは一致必須
 
 ### フィルタ
-```cs
+```csharp
 // ガウシアンフィルタ
 var filterImage1 = image.Filter(ImageFilter.GaussianFilter);
 // アウトラインフィルタ
@@ -71,7 +71,7 @@ var filterImage2 = image.Filter(ImageFilter.OutlineFilter);
 ```
 
 ### メソッドチェーンできます
-```cs
+```csharp
 IOUtil.LoadImageRGB("画像のファイルパス")
       .Ajdust(ImageAjdustment.Value, 0.1f)
       .Filter(ImageFilter.GaussianFilter)
